@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8f3ea;
+  --foreground: #2d2924;
+  --surface: #fffaf2;
+  --surface-muted: #efe5d7;
+  --sage: #8fa08a;
+  --sage-dark: #566b5a;
+  --dusk: #748aa0;
+  --clay: #a46d55;
+  --ink: #2d2924;
+  --muted: #6f665d;
+  --border: #ded0bf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  background:
+    linear-gradient(180deg, rgba(248, 243, 234, 0.96), rgba(244, 237, 226, 0.96)),
+    radial-gradient(circle at 15% 12%, rgba(143, 160, 138, 0.16), transparent 30%),
+    radial-gradient(circle at 85% 4%, rgba(116, 138, 160, 0.13), transparent 28%);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  text-rendering: geometricPrecision;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  opacity: 0.24;
+  background-image:
+    linear-gradient(rgba(45, 41, 36, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 41, 36, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, black, transparent 76%);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@utility heading-font {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+::selection {
+  background: rgba(143, 160, 138, 0.36);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(86, 107, 90, 0.42);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
