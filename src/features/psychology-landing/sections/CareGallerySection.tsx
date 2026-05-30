@@ -26,6 +26,7 @@ export function CareGallerySection({ images }: CareGallerySectionProps) {
               aspect={index % 2 === 0 ? "landscape" : "portrait"}
               image={image}
               key={image.fileName}
+              quality={85}
               sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 92vw"
             />
           ))}

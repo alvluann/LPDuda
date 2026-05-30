@@ -4,6 +4,7 @@ import type { LandingImageAsset } from "../types/psychology-landing.types";
 type ImageFrameProps = {
   image?: LandingImageAsset;
   priority?: boolean;
+  quality?: number;
   sizes: string;
   aspect?: "portrait" | "landscape" | "square";
   caption?: string;
@@ -19,6 +20,7 @@ const aspectClasses = {
 export function ImageFrame({
   image,
   priority = false,
+  quality = 90,
   sizes,
   aspect = "portrait",
   caption,
@@ -35,6 +37,7 @@ export function ImageFrame({
             className="object-cover"
             fill
             priority={priority}
+            quality={quality}
             sizes={sizes}
             src={image.src}
           />

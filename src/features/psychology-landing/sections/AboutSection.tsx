@@ -16,6 +16,8 @@ export function AboutSection({ content, image }: AboutSectionProps) {
           aspect="portrait"
           caption={`${content.name}, ${content.role} ${content.crp}`}
           image={image}
+          priority
+          quality={92}
           sizes="(min-width: 1024px) 38vw, 92vw"
         />
 

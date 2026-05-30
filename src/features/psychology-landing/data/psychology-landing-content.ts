@@ -1,6 +1,6 @@
 import type { PsychologyLandingContent } from "../types/psychology-landing.types";
 
-const WHATSAPP_NUMBER = "5500000000000";
+const WHATSAPP_NUMBER = "5512981838806";
 const WHATSAPP_MESSAGE =
   "Olá, Maria Eduarda. Gostaria de agendar uma conversa para saber mais sobre a psicoterapia.";
 

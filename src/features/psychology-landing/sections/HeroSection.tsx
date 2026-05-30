@@ -18,6 +18,7 @@ export function HeroSection({ content, image }: HeroSectionProps) {
               className="object-cover object-[center_bottom] [mask-image:linear-gradient(180deg,transparent_0%,black_28%,black_100%)] sm:object-center sm:[mask-image:none] lg:[mask-image:linear-gradient(90deg,transparent_0%,black_24%,black_100%)]"
               fill
               priority
+              quality={92}
               sizes="(min-width: 1024px) 62vw, 100vw"
               src={image.src}
             />
