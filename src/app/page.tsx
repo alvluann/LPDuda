@@ -11,6 +11,7 @@ import { OnlineCareSection } from "@/features/psychology-landing/sections/Online
 import { PainPointsSection } from "@/features/psychology-landing/sections/PainPointsSection";
 import { SeekingTherapySection } from "@/features/psychology-landing/sections/SeekingTherapySection";
 import { ServicesSection } from "@/features/psychology-landing/sections/ServicesSection";
+import { MobileContactBar } from "@/features/psychology-landing/components/MobileContactBar";
 import { landingContent } from "@/features/psychology-landing/data/psychology-landing-content";
 import { assignLandingImages } from "@/features/psychology-landing/utils/assign-landing-images";
 import { getLandingImages } from "@/features/psychology-landing/utils/get-landing-images";
@@ -20,7 +21,7 @@ export default async function Home() {
   const imagePlacement = assignLandingImages(images);
 
   return (
-    <main id="top">
+    <main className="pb-20 sm:pb-0" id="top">
       <HeroSection content={landingContent.hero} image={imagePlacement.hero} />
       <AboutSection content={landingContent.about} image={imagePlacement.about} />
       <PainPointsSection content={landingContent.painPoints} />
@@ -34,6 +35,7 @@ export default async function Home() {
       <CareGallerySection images={imagePlacement.gallery} />
       <FAQSection content={landingContent.faq} />
       <CTASection content={landingContent.finalCta} />
+      <MobileContactBar cta={landingContent.hero.primaryCta} />
     </main>
   );
 }

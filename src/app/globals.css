@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8f3ea;
+  --background: #e4d5c0;
   --foreground: #2d2924;
-  --surface: #fffaf2;
-  --surface-muted: #efe5d7;
+  --surface: #fff7eb;
+  --surface-muted: #d8c7b1;
   --sage: #8fa08a;
-  --sage-dark: #566b5a;
-  --dusk: #748aa0;
+  --sage-dark: #435646;
+  --dusk: #667d8d;
   --clay: #a46d55;
   --ink: #2d2924;
-  --muted: #6f665d;
-  --border: #ded0bf;
+  --muted: #5f574f;
+  --border: #c9b79f;
 }
 
 * {
@@ -20,18 +20,21 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 1rem;
   background: var(--background);
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   background:
-    linear-gradient(180deg, rgba(248, 243, 234, 0.96), rgba(244, 237, 226, 0.96)),
-    radial-gradient(circle at 15% 12%, rgba(143, 160, 138, 0.16), transparent 30%),
-    radial-gradient(circle at 85% 4%, rgba(116, 138, 160, 0.13), transparent 28%);
+    linear-gradient(180deg, rgba(226, 211, 191, 0.98), rgba(205, 185, 158, 0.97)),
+    radial-gradient(circle at 15% 12%, rgba(86, 107, 90, 0.16), transparent 30%),
+    radial-gradient(circle at 85% 4%, rgba(102, 125, 141, 0.14), transparent 28%);
   color: var(--foreground);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   text-rendering: geometricPrecision;
+  overflow-x: hidden;
 }
 
 body::before {
@@ -42,8 +45,8 @@ body::before {
   content: "";
   opacity: 0.24;
   background-image:
-    linear-gradient(rgba(45, 41, 36, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(45, 41, 36, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(45, 41, 36, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 41, 36, 0.052) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image: linear-gradient(to bottom, black, transparent 76%);
 }
@@ -51,6 +54,11 @@ body::before {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+}
+
+img,
+svg {
+  max-width: 100%;
 }
 
 @utility heading-font {
@@ -64,6 +72,20 @@ a {
 :focus-visible {
   outline: 3px solid rgba(86, 107, 90, 0.42);
   outline-offset: 4px;
+}
+
+@media (max-width: 639px) {
+  body {
+    background:
+      linear-gradient(180deg, rgba(218, 199, 173, 0.99), rgba(190, 169, 143, 0.98)),
+      radial-gradient(circle at 8% 8%, rgba(67, 86, 70, 0.16), transparent 34%),
+      radial-gradient(circle at 96% 0%, rgba(102, 125, 141, 0.13), transparent 30%);
+  }
+
+  body::before {
+    opacity: 0.18;
+    background-size: 32px 32px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -27,7 +27,7 @@ export function ImageFrame({
   return (
     <figure className={className}>
       <div
-        className={`relative overflow-hidden rounded-[2rem] border border-[#decfbd] bg-[#efe5d7] shadow-[0_26px_90px_rgba(45,41,36,0.16)] ${aspectClasses[aspect]}`}
+        className={`relative overflow-hidden rounded-[1.35rem] border border-[#bfa88d] bg-[#d8c7b1] shadow-[0_20px_58px_rgba(45,41,36,0.18)] sm:rounded-[2rem] sm:shadow-[0_26px_90px_rgba(45,41,36,0.18)] ${aspectClasses[aspect]}`}
       >
         {image ? (
           <Image
@@ -41,19 +41,23 @@ export function ImageFrame({
         ) : (
           <div
             aria-hidden="true"
-            className="flex h-full flex-col justify-between bg-[linear-gradient(135deg,#f6ecdf_0%,#dfe6dd_48%,#d5dde6_100%)] p-7"
+            className="flex h-full flex-col justify-between bg-[linear-gradient(135deg,#f1e3cf_0%,#d5ddcf_48%,#c7d0d7_100%)] p-5 sm:p-7"
           >
             <div className="h-20 w-20 rounded-full border border-[#b8c4b5] bg-white/38" />
             <div className="space-y-4">
               <div className="h-px w-full bg-[#b8a891]" />
-              <p className="heading-font max-w-xs text-3xl font-semibold leading-none text-[#405344]">
+              <p className="heading-font max-w-xs text-2xl font-semibold leading-none text-[#405344] sm:text-3xl">
                 Escuta, vínculo e presença.
               </p>
             </div>
           </div>
         )}
       </div>
-      {caption ? <figcaption className="mt-4 text-sm text-[#6f665d]">{caption}</figcaption> : null}
+      {caption ? (
+        <figcaption className="mt-3 px-1 text-sm leading-6 text-[#4f473f] sm:mt-4 sm:px-0">
+          {caption}
+        </figcaption>
+      ) : null}
     </figure>
   );
 }
